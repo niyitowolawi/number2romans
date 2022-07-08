@@ -23,6 +23,11 @@ public class ArabicToRomansConverter {
     }
 
     public String toRomanNumerals(int number){
+
+        if(number <= 0){
+            throw new RuntimeException("Input number is out of range. Only 1 - 3,000 supported");
+        }
+
         int floorKey = numbersToRomansMap.floorKey(number);
         if(floorKey == number){
             return numbersToRomansMap.get(number);
