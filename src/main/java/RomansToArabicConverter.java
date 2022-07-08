@@ -35,6 +35,9 @@ public class RomansToArabicConverter {
         for(int i = 1; i < roman.length(); i++){
             if(roman.charAt(i) == roman.charAt(i-1)){
                 number += romansToNumbersMap.get(Character.toString(roman.charAt(i)));
+            }else{
+                roman = roman.substring(i-1);
+                number += romansToNumbersMap.get(Character.toString(roman.charAt(i)));
             }
         }
         return number;
