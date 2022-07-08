@@ -18,21 +18,22 @@ class RomansToArabicConverterTest {
 
     private static Stream<Arguments> fromRomanNumerals() {
         return Stream.of(
-                Arguments.of("I", 1)
-/*                Arguments.of(2, "II"),
+                Arguments.of("I", 1),
+                Arguments.of("IV", 4),
+                Arguments.of("V", 5),
+                Arguments.of("IX", 9),
+                Arguments.of("X", 10),
+                Arguments.of("XL", 40),
+                Arguments.of("L", 50),
+                Arguments.of("XC", 90),
+                Arguments.of("C", 100),
+                Arguments.of("CD", 400),
+                Arguments.of("D", 500),
+                Arguments.of("CM", 900),
+                Arguments.of("M", 1000),
+                Arguments.of("II", 2)
+/*
                 Arguments.of(3, "III"),
-                Arguments.of(4, "IV"),
-                Arguments.of(5, "V"),
-                Arguments.of(9, "IX"),
-                Arguments.of(10, "X"),
-                Arguments.of(40, "XL"),
-                Arguments.of(50, "L"),
-                Arguments.of(90, "XC"),
-                Arguments.of(100, "C"),
-                Arguments.of(400, "CD"),
-                Arguments.of(500, "D"),
-                Arguments.of(900, "CM"),
-                Arguments.of(1000, "M"),
                 Arguments.of(6, "VI"),
                 Arguments.of(8, "VIII"),
                 Arguments.of(11, "XI"),
