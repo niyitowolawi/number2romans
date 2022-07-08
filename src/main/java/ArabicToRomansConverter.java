@@ -1,6 +1,6 @@
 public class ArabicToRomansConverter {
 
-    public String toRomanNumerals(){
+    public String toRomanNumerals(int number){
         return null;
     }
 }
