@@ -19,6 +19,7 @@ class RomansToArabicConverterTest {
     private static Stream<Arguments> fromRomanNumerals() {
         return Stream.of(
                 Arguments.of("I", 1),
+                Arguments.of("i", 1),
                 Arguments.of("IV", 4),
                 Arguments.of("V", 5),
                 Arguments.of("IX", 9),

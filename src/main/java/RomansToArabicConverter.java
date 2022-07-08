@@ -7,6 +7,8 @@ public class RomansToArabicConverter {
     private static final int MINIMUM_NUMBER = 1;
     private static final int MAXMUM_NUMBER = 3000;
 
+    static String ORDER = "IVXLCDM";
+
     static{
         romansToNumbersMap.put("I", 1);
         romansToNumbersMap.put("IV", 4);
@@ -24,9 +26,17 @@ public class RomansToArabicConverter {
     }
 
     public int toArabicNumerals(String roman){
+        roman = roman.toUpperCase();
         if(romansToNumbersMap.containsKey(roman)){
             return romansToNumbersMap.get(roman);
         }
-        return 0;
+
+        int number = romansToNumbersMap.get(Character.toString(roman.charAt(0)));  //add test for nonsense strings
+        for(int i = 1; i < roman.length(); i++){
+            if(roman.charAt(i) == roman.charAt(i-1)){
+                number += romansToNumbersMap.get(Character.toString(roman.charAt(i)));
+            }
+        }
+        return number;
     }
 }
