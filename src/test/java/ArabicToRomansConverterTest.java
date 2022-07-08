@@ -33,7 +33,14 @@ class ArabicToRomansConverterTest {
                 Arguments.of(500, "D"),
                 Arguments.of(900, "CM"),
                 Arguments.of(1000, "M"),
-                Arguments.of(6, "VI")
+                Arguments.of(6, "VI"),
+                Arguments.of(8, "VIII"),
+                Arguments.of(11, "XI"),
+                Arguments.of(49, "XLIX"),
+                Arguments.of(63, "LXIII"),
+                Arguments.of(999, "CMXCIX"),
+                Arguments.of(1548, "MDXLVIII"),
+                Arguments.of(3000, "MMM")
         );
     }
 }
