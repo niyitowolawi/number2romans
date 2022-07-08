@@ -1,9 +1,10 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class ArabicToRomansConverter {
 
-    private final static Map<Integer, String> numbersToRomansMap = new HashMap();
+    private final static TreeMap<Integer, String> numbersToRomansMap = new TreeMap();
 
     static{
         numbersToRomansMap.put(1, "I");
@@ -22,15 +23,13 @@ public class ArabicToRomansConverter {
     }
 
     public String toRomanNumerals(int number){
-        if(numbersToRomansMap.containsKey(number)){
+        int floorKey = numbersToRomansMap.floorKey(number);
+        if(floorKey == number){
             return numbersToRomansMap.get(number);
         }
 
         StringBuilder romans = new StringBuilder();
-
-        for(int i = 0; i < number; i++){
-            romans.append("I");
-        }
-        return romans.toString();
+        romans.append(numbersToRomansMap.get(floorKey)).append(toRomanNumerals(number - floorKey));
+        return  romans.toString();
     }
 }
