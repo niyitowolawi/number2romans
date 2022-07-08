@@ -47,11 +47,9 @@ class ArabicToRomansConverterTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {0, -1})
+    @ValueSource(ints = {0, -1, 3001})
     void failNumbersOutOfRange(int number) {
-        assertThatThrownBy(() -> {
-            arabicToRomansConverter.toRomanNumerals(number);
-        });
+        assertThatThrownBy(() -> arabicToRomansConverter.toRomanNumerals(number));
     }
 
 }

@@ -1,10 +1,11 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.TreeMap;
 
 public class ArabicToRomansConverter {
 
     private final static TreeMap<Integer, String> numbersToRomansMap = new TreeMap();
+
+    private static final int MINIMUM_NUMBER = 1;
+    private static final int MAXMUM_NUMBER = 3000;
 
     static{
         numbersToRomansMap.put(1, "I");
@@ -24,7 +25,7 @@ public class ArabicToRomansConverter {
 
     public String toRomanNumerals(int number){
 
-        if(number <= 0){
+        if(number < MINIMUM_NUMBER || number > MAXMUM_NUMBER){
             throw new RuntimeException("Input number is out of range. Only 1 - 3,000 supported");
         }
 
