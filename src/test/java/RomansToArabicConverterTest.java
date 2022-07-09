@@ -33,7 +33,8 @@ class RomansToArabicConverterTest {
                 Arguments.of("CM", 900),
                 Arguments.of("M", 1000),
                 Arguments.of("II", 2),
-                Arguments.of("VI", 6)
+                Arguments.of("VI", 6),
+                Arguments.of("XIV", 14)
 /*
                 Arguments.of(8, "VIII"),
                 Arguments.of(11, "XI"),
