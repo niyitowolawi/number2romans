@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -39,15 +38,10 @@ class RomansToArabicConverterTest {
                 Arguments.of("VI", 6),
                 Arguments.of("XIV", 14),
                 Arguments.of("VIII", 8),
-                Arguments.of("XLIX", 49)
-
-/*
-                Arguments.of(11, "XI"),
-                Arguments.of(49, "XLIX"),
-                Arguments.of(63, "LXIII"),
-                Arguments.of(999, "CMXCIX"),
-                Arguments.of(1548, "MDXLVIII"),
-                Arguments.of(3000, "MMM")*/
+                Arguments.of("XLIX", 49),
+                Arguments.of("LXIII", 63),
+                Arguments.of("CMXCIX", 999),
+                Arguments.of("MDXLVIII", 1548)
         );
     }
 

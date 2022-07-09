@@ -1,8 +1,9 @@
-import java.util.TreeMap;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RomansToArabicConverter {
 
-    private final static TreeMap<String, Integer> romansToNumbersMap = new TreeMap();
+    private final static Map<String, Integer> romansToNumbersMap = new HashMap();
 
     private static final int MINIMUM_NUMBER = 1;
     private static final int MAXMUM_NUMBER = 3000;
@@ -29,7 +30,7 @@ public class RomansToArabicConverter {
             return romansToNumbersMap.get(roman);
         }
 
-        int number = 0;
+        int number;
         String first2Chars = roman.substring(0,2);
         String remainingChars;
 
