@@ -37,10 +37,16 @@ public class RomansToArabicConverter {
             number = romansToNumbersMap.get(first2Chars);
             remainingChars = roman.substring(2);
         }else{
-            number = romansToNumbersMap.get(Character.toString(roman.charAt(0)));   //add test for nonsense strings
+            number = romansToNumbersMap.get(Character.toString(roman.charAt(0)));
             remainingChars = roman.substring(1);
         }
 
-        return number + toArabicNumerals(remainingChars);
+        number += toArabicNumerals(remainingChars);
+
+        if(number < MINIMUM_NUMBER || number > MAXMUM_NUMBER){
+            throw new RuntimeException("Input number is out of range. Only 1 - 3,000 supported");
+        }
+
+        return number;
     }
 }

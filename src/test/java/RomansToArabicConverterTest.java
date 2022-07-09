@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.stream.Stream;
 
@@ -50,9 +51,10 @@ class RomansToArabicConverterTest {
         );
     }
 
-    @Test
-    public void failInvalidStrings(){
-        assertThatThrownBy(() -> romansToArabicConverter.toArabicNumerals("BAD"));
+    @ParameterizedTest
+    @ValueSource(strings = {"BAD", "MMMI", "MMMM"})
+    void invalidStrings(String roman) {
+        assertThatThrownBy(() -> romansToArabicConverter.toArabicNumerals(roman));
     }
 
 }
