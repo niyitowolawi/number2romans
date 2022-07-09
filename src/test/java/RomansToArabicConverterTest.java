@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -5,6 +6,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 class RomansToArabicConverterTest {
 
@@ -34,9 +36,11 @@ class RomansToArabicConverterTest {
                 Arguments.of("M", 1000),
                 Arguments.of("II", 2),
                 Arguments.of("VI", 6),
-                Arguments.of("XIV", 14)
+                Arguments.of("XIV", 14),
+                Arguments.of("VIII", 8),
+                Arguments.of("XLIX", 49)
+
 /*
-                Arguments.of(8, "VIII"),
                 Arguments.of(11, "XI"),
                 Arguments.of(49, "XLIX"),
                 Arguments.of(63, "LXIII"),
@@ -44,6 +48,11 @@ class RomansToArabicConverterTest {
                 Arguments.of(1548, "MDXLVIII"),
                 Arguments.of(3000, "MMM")*/
         );
+    }
+
+    @Test
+    public void failInvalidStrings(){
+        assertThatThrownBy(() -> romansToArabicConverter.toArabicNumerals("BAD"));
     }
 
 }
